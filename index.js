@@ -41,6 +41,7 @@ let hours
 
 let interval
 
+var stepRecord = []
 
 class Square {
     constructor({ }) {
@@ -97,6 +98,28 @@ const populateGrid = () => {
             squares.push(square)
             grid.appendChild(square)
         }
+    }
+}
+
+function redo() {
+    let latestStep = stepRecord[stepRecord.length - 1];
+    stepRecord.pop();
+    console.log(latestStep)
+    //Extracting coordinates
+    let coord = latestStep.split(" ")[1];
+    let r = parseInt(coord.split('-')[0]);
+    let c = parseInt(coord.split('-')[1]);
+    if (latestStep.startsWith('flag')) {
+        unDoubt(r,c);
+        console.log("1")
+    }
+    if(latestStep.startsWith('doubt')) {
+        flag(r,c);
+        console.log("2")
+    }
+    if(latestStep.startsWith('undoubt')) {
+        doubt(r,c);
+        console.log("3")
     }
 }
 
@@ -228,24 +251,39 @@ const blow = () => {
 
 const putFlag = (i,j) => {
     if(!mines[i][j].flagType) {
-        const flagImg = document.createElement('img')
-        flagImg.src = './media/flag.png'
-        squares[i*gridWidth+j].appendChild(flagImg)
-        nMines++
-        minesCountText.innerText = `${nMines}/${totalMines}` 
-        mines[i][j].flagType = FLAG_TYPES.OK
+        stepRecord.push("flag "+i+"-"+j);
+        flag(i,j);
     } else if(mines[i][j].flagType === FLAG_TYPES.OK) {
-        const flagDoubtImg = document.createElement('img')
-        flagDoubtImg.src = './media/flag_doubt.png'
-        squares[i*gridWidth+j].innerHTML= ''
-        squares[i*gridWidth+j].appendChild(flagDoubtImg)
-        nMines--
-        minesCountText.innerText = `${nMines}/${totalMines}`
-        mines[i][j].flagType = FLAG_TYPES.DOUBT
+        stepRecord.push("doubt "+i+"-"+j);
+        doubt(i,j);
     } else if (mines[i][j].flagType === FLAG_TYPES.DOUBT) {
-        squares[i*gridWidth+j].innerHTML = ''
-        mines[i][j].flagType = undefined
+        stepRecord.push('undoubt '+i+"-"+j);
+        unDoubt(i,j);
     }
+}
+
+function flag(i,j) {
+    
+    const flagImg = document.createElement('img')
+    flagImg.src = './media/flag.png'
+    squares[i*gridWidth+j].innerHTML= ''
+    squares[i*gridWidth+j].appendChild(flagImg)
+    nMines++
+    minesCountText.innerText = `${nMines}/${totalMines}` 
+    mines[i][j].flagType = FLAG_TYPES.OK
+}
+function doubt(i,j) {
+    const flagDoubtImg = document.createElement('img')
+    flagDoubtImg.src = './media/flag_doubt.png'
+    squares[i*gridWidth+j].innerHTML= ''
+    squares[i*gridWidth+j].appendChild(flagDoubtImg)
+    nMines--
+    minesCountText.innerText = `${nMines}/${totalMines}`
+    mines[i][j].flagType = FLAG_TYPES.DOUBT
+}
+function unDoubt(i,j) {
+    squares[i*gridWidth+j].innerHTML = ''
+    mines[i][j].flagType = undefined
 }
 
 const stopwatch = () => {
