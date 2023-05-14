@@ -45,6 +45,7 @@ var stepRecord = []
 
 class Square {
     constructor({ }) {
+        this.manuallyOpened= false;
         this.mine = false
         this.discovered = false
         this.adjacentMines = 0
@@ -146,28 +147,28 @@ function coverTile(i,j) {
         return;
     }
 
-    if ((i-1 >= 0) && (j-1 >= 0)) {
+    if ((i-1 >= 0) && (j-1 >= 0) && !mines[i-1][j-1].manuallyOpened) {
         coverTile(i-1, j-1)
     }
-    if (i-1 >= 0) {
+    if (i-1 >= 0 && !mines[i-1][j].manuallyOpened) {
         coverTile(i-1,j)
     }
-    if ((i-1 >= 0) && (j+1 < mines[i].length)) {
+    if ((i-1 >= 0) && (j+1 < mines[i].length)&& !mines[i-1][j+1].manuallyOpened) {
         coverTile(i-1, j+1)
     }
-    if (j-1 >= 0) {
+    if (j-1 >= 0&& !mines[i][j-1].manuallyOpened) {
         coverTile(i, j-1)
     }
-    if (j+1 < mines[i].length) {
+    if (j+1 < mines[i].length&& !mines[i][j+1].manuallyOpened) {
         coverTile(i, j+1)
     }
-    if ((i+1 <mines.length) && (j-1 >= 0)) {
+    if ((i+1 <mines.length) && (j-1 >= 0)&& !mines[i+1][j-1].manuallyOpened) {
         coverTile(i+1, j-1)
     }
-    if ((i+1 < mines.length)) {
+    if ((i+1 < mines.length)&& !mines[i+1][j].manuallyOpened) {
         coverTile(i+1, j)
     }
-    if ((i+1 < mines.length) && (j+1 < mines[i].length)) {
+    if ((i+1 < mines.length) && (j+1 < mines[i].length)&& !mines[i][j].manuallyOpened) {
         coverTile(i+1, j+1)
     }
     return
@@ -254,12 +255,19 @@ const floodFill = (i,j, manualClick) => {
             stopped = true
         }
         if (mines[i][j].adjancentMines != 0) {
-            if(manualClick==true) stepRecord.push("open "+i+"-"+j);
+            if(manualClick==true) {
+                stepRecord.push("open "+i+"-"+j);
+                mines[i][j].manuallyOpened = true;
+            }
             squares[i*gridWidth+j].innerText = mines[i][j].adjancentMines
             return
         }
     }
-    if(manualClick==true) stepRecord.push("open "+i+"-"+j);
+    if(manualClick==true) {
+        stepRecord.push("open "+i+"-"+j);
+        mines[i][j].manuallyOpened = true;
+    }
+    else mines[i][j].openedBy0 = true;
     if ((i-1 >= 0) && (j-1 >= 0)) {
         floodFill(i-1, j-1,false)
         console.log("hahaha")
