@@ -53,6 +53,7 @@ class Square {
 }
 
 const setInitialVariables = () => {
+    stepRecord = []
     stopped = false
     paused = false
     firstClick = true
@@ -102,8 +103,7 @@ const populateGrid = () => {
 }
 
 function redo() {
-    if(stepRecord.length==0) {
-        console.log("hết step để undo rồi");
+    if(stepRecord.length==0 || stopped) {
         return;
     }
 
