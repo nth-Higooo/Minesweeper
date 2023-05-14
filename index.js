@@ -141,7 +141,7 @@ function coverTile(i,j) {
     mines[i][j].discovered = false
     squares[i*gridWidth + j].style.background = "#ffff"
     nMinesDiscovered--
-
+    mines[i][j].manuallyOpened = false;
     if (mines[i][j].adjancentMines != 0) {
         squares[i*gridWidth+j].innerText = '';
         return;
