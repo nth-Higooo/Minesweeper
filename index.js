@@ -2,6 +2,7 @@ const board = document.getElementById('board')
 const grid = document.getElementById('grid')
 
 const pauseBtn = document.getElementById('pauseBtn')
+const redoBtn = document.getElementById('redoBtn')
 const minesCountText = document.getElementById('minesCount')
 
 const MOUSE_BUTTONS = {

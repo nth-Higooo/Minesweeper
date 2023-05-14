@@ -148,7 +148,7 @@ header {
     width: 200px;
     padding: 10px;
     border-radius: 5px;
-    margin: 10px;
+    margin: 10px 0 10px 0;
 }
 .buttons button {
     height: 50px;
@@ -159,6 +159,7 @@ header {
     border: none;
     border-radius: 5px;
     color:rgb(69, 7, 40);
+    margin: 5px 0 ;
 }
 .buttons button:hover {
     color: azure;
