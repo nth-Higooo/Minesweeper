@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MinesDaGame</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Press+Start+2P&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css">
+    <script src="index.js" defer></script>
+    <i class="fa-duotone fa-bars" style="--fa-primary-color: #adb3ff; --fa-secondary-color: #f7d4e5;"></i>
+      
+      
+</head>
+<body>
+    <header>
+        <div class="logo">MINESWEEPER</div>
+        <div class="hamburger" id="hamburger">
+            <div class="line"></div>
+            <div class="line"></div>
+            <div class="line"></div>
+        </div>
+        <nav class="nav-bar" id="nav-bar">
+            <ul class="links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="">Rules</a></li>
+                <li><a href="">AR</a></li>
+                <li><a href="">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="main">
+
+        <video autoplay muted loop plays-inline class="back-video">
+            <source src="media/background.mp4" type="video/mp4">
+        </video>
+
+        <div class="container">
+            <div class="sideBar">
+                <div class="stats">
+                    <img src="media/flag.png" alt="" style="height: auto; max-width: 30%;">
+                    <p id="minesCount"></p>
+                </div>
+
+                <div class="timer">
+                    <img src="media/timer.png" alt="" style="height: auto; max-width: 30%;">
+                    <p><span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span></p>
+                </div>
+
+                <div class="buttons">
+                    <button id="pauseBtn" onclick="pause()">Pause</button>
+                    <div class="newGame">
+                        <select name="level" id="level">
+                            <option value="small" selected>Small</option>
+                            <option value="medium">Medium</option>
+                            <option value="large">Large</option>
+                        </select>
+                        <button onclick="newGame()">Start Game</button>
+                    </div>
+                </div>
+
+            </div>
+            <div class="board" id="board">
+                <div class="grid" id="grid"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
