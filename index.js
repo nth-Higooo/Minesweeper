@@ -111,7 +111,7 @@ function redo() {
     console.log(stepRecord);
     let latestStep = stepRecord[stepRecord.length - 1];
     stepRecord.pop();
-    console.log(latestStep)
+    console.log("now redo: "+latestStep)
 
     //Extracting coordinates
     let coord = latestStep.split(" ")[1];
@@ -137,7 +137,7 @@ function redo() {
 
 function coverTile(i,j) {
     if(mines[i][j].discovered == false) return;
-    console.log("cover "+i+"-"+j);
+
     mines[i][j].discovered = false
     squares[i*gridWidth + j].style.background = "#ffff"
     nMinesDiscovered--
