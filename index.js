@@ -350,6 +350,18 @@ function unDoubt(i, j) {
     mines[i][j].flagType = undefined
 }
 
+const autoOpen = (i, j) => {
+    let countFlag = 0;
+    if(Square.discovered == firstClick){
+        reClick = true;
+        for(let i = 0; i <squares;i++){
+            for(let j = 0; j <= square[i]; j++){
+                square[0][0];
+            }
+        }
+    }
+  }
+
 const stopwatch = () => {
     if (!paused && !stopped) {
         seconds++
