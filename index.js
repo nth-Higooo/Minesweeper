@@ -141,7 +141,7 @@ function coverTile(i,j) {
     mines[i][j].discovered = false
     squares[i*gridWidth + j].style.background = "#ffff"
     nMinesDiscovered--
-    mines[i][j].manuallyOpened = false;
+    
     if (mines[i][j].adjancentMines != 0) {
         squares[i*gridWidth+j].innerText = '';
         return;
@@ -168,9 +168,11 @@ function coverTile(i,j) {
     if ((i+1 < mines.length)&& !mines[i+1][j].manuallyOpened) {
         coverTile(i+1, j)
     }
-    if ((i+1 < mines.length) && (j+1 < mines[i].length)&& !mines[i][j].manuallyOpened) {
+    if ((i+1 < mines.length) && (j+1 < mines[i].length)&& !mines[i+1][j+1].manuallyOpened) {
         coverTile(i+1, j+1)
     }
+
+    mines[i][j].manuallyOpened = false;
     return
 }
 
@@ -267,10 +269,8 @@ const floodFill = (i,j, manualClick) => {
         stepRecord.push("open "+i+"-"+j);
         mines[i][j].manuallyOpened = true;
     }
-    else mines[i][j].openedBy0 = true;
     if ((i-1 >= 0) && (j-1 >= 0)) {
         floodFill(i-1, j-1,false)
-        console.log("hahaha")
     }
     if (i-1 >= 0) {
         floodFill(i-1,j,false)
