@@ -120,16 +120,16 @@ function redo() {
     let c = parseInt(coord.split('-')[1]);
 
     if (latestStep.startsWith('flag')) {
+        nMines--
+        minesCountText.innerText = `${nMines}/${totalMines}`
         unDoubt(r, c);
-        console.log("1")
     }
     if (latestStep.startsWith('doubt')) {
         flag(r, c);
-        console.log("2")
     }
     if (latestStep.startsWith('undoubt')) {
+        nMines++;
         doubt(r, c);
-        console.log("3")
     }
     if (latestStep.startsWith('open ')) {
         coverTile(r, c);
