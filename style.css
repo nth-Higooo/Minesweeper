@@ -1,20 +1,26 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
     font-family: 'Bruno Ace', cursive;
 }
+
 /*______________ Page header______________ */
 header {
     width: 100%;
     height: 50px;
-    background:rgba(0, 0, 0, 0.625);
+    background: rgba(0, 0, 0, 0.625);
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 20px;
 }
+
+body {
+    background-color: #63c3ec;
+}
+
 .logo {
     font-family: 'Press Start 2P', cursive;
     font-size: 2rem;
@@ -22,17 +28,18 @@ header {
     color: rgba(255, 255, 255, 0.692);
     -webkit-text-stroke: 1px #fff;
 }
-.nav-bar ul{
+
+.nav-bar ul {
     display: flex;
     list-style: none;
 }
 
-.nav-bar ul li a{
+.nav-bar ul li a {
     text-decoration: none;
     display: block;
     color: azure;
     font-size: 20px;
-    padding: 10px 20px ;
+    padding: 10px 20px;
     border-radius: 5px;
     transition: 0.8s;
     margin: 0 5px;
@@ -46,14 +53,14 @@ header {
     z-index: 0;
     border-radius: 8px;
     transition: .5s;
-} 
-
-.nav-bar ul li a:hover {
-    background: linear-gradient(45deg, #f5a0b1, #7b31e367) ;
 }
 
-.nav-bar ul li a.active{
-    background: linear-gradient(45deg, #f5a0b1, #7b31e367) ;
+.nav-bar ul li a:hover {
+    background: linear-gradient(45deg, #f5a0b1, #7b31e367);
+}
+
+.nav-bar ul li a.active {
+    background: linear-gradient(45deg, #f5a0b1, #7b31e367);
 }
 
 /*______________ Main______________ */
@@ -61,7 +68,9 @@ header {
     width: 100%;
     height: 100%;
     padding: 30px 60px;
+
 }
+
 .back-video {
     position: fixed;
     top: 0;
@@ -72,12 +81,14 @@ header {
     height: auto;
     z-index: -1;
 }
+
 .container {
     justify-content: center;
     align-items: center;
     display: flex;
     gap: 10px;
 }
+
 .sideBar {
     display: flex;
     flex-direction: column;
@@ -88,6 +99,7 @@ header {
     background-color: rgba(58, 54, 56, 0.897);
     border-radius: 5px;
 }
+
 .timer {
     display: flex;
     flex-direction: column;
@@ -98,6 +110,7 @@ header {
     background: linear-gradient(30deg, #63c3ec, #f88aa0);
     border-radius: 2px;
 }
+
 .stats {
     display: flex;
     flex-direction: column;
@@ -116,31 +129,37 @@ header {
     background: rgba(58, 54, 56, 0.897);
     border-radius: 5px;
 }
+
 .grid {
     display: grid;
     flex-wrap: wrap;
     padding: 10px;
 }
+
 .square {
     width: 25px;
     height: 25px;
-    background: #ffff ;
+    background: #ffff;
     margin: 2px;
     display: flex;
     justify-content: center;
     align-items: center;
     cursor: pointer;
 }
+
 .square img {
     height: auto;
     max-width: 75%;
 }
+
 .square.discovered {
     background: linear-gradient(45deg, #f5a0b1, #7b31e367);
 }
+
 .square:hover {
     background: linear-gradient(45deg, #f5a0b1, #7b31e367);
 }
+
 .buttons {
     display: flex;
     flex-direction: column;
@@ -150,31 +169,35 @@ header {
     border-radius: 5px;
     margin: 10px 0 10px 0;
 }
+
 .buttons button {
     height: 50px;
     font-size: 20px;
     font-weight: 800;
     cursor: pointer;
-    background: linear-gradient(#fff) ;
+    background: linear-gradient(#fff);
     border: none;
     border-radius: 5px;
-    color:rgb(69, 7, 40);
-    margin: 5px 0 ;
+    color: rgb(69, 7, 40);
+    margin: 5px 0;
 }
+
 .buttons button:hover {
     color: azure;
-    background: linear-gradient(45deg, #f5a0b1, #7b31e367) ;
+    background: linear-gradient(45deg, #f5a0b1, #7b31e367);
     left: -20%;
     height: 50px;
     z-index: 0;
     border-radius: 8px;
     transition: 0.5s;
 }
+
 .newGame {
     display: flex;
     margin-top: 20px;
     flex-direction: column;
 }
+
 .newGame select {
     font-size: 20px;
     margin-bottom: 5px;
@@ -183,18 +206,20 @@ header {
 }
 
 /*______________ Respinsive______________ */
-@media only screen and (max-width: 900px){
+@media only screen and (max-width: 900px) {
     .hamburger {
-        display:  block;
+        display: block;
         cursor: pointer;
 
     }
+
     .hamburger .line {
         width: 30px;
         height: 3px;
         background: azure;
         margin: 6px 0;
     }
+
     .nav-bar {
         height: 0;
         position: absolute;
@@ -202,14 +227,16 @@ header {
         left: 60%;
         right: 0;
         width: 40%;
-        background:rgba(0, 0, 0, 0.625);
+        background: rgba(0, 0, 0, 0.625);
         transition: 0.5s;
         backdrop-filter: blur(5px);
-         overflow: hidden;
+        overflow: hidden;
     }
+
     .nav-bar.active {
         height: 450px;
     }
+
     .nav-bar ul {
         display: block;
         width: fit-content;
@@ -218,9 +245,11 @@ header {
         transform: 0.5s;
         opacity: 0;
     }
-    .nav-bar.active ul{
+
+    .nav-bar.active ul {
         opacity: 1;
     }
+
     .nav-bar ul li a {
         padding: 20px 20px;
         margin-bottom: 20px;
