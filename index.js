@@ -41,7 +41,6 @@ let hours
 
 let interval
 
-var stepRecord = []
 
 class Square {
     constructor({ }) {
@@ -54,7 +53,6 @@ class Square {
 }
 
 const setInitialVariables = () => {
-    stepRecord = []
     stopped = false
     paused = false
     firstClick = true
@@ -105,77 +103,14 @@ const populateGrid = () => {
 
 
 function redo() {
-    if (stepRecord.length == 0 || stopped) {
-        return;
-    }
-
-    console.log(stepRecord);
-    let latestStep = stepRecord[stepRecord.length - 1];
-    stepRecord.pop();
-    console.log("now redo: " + latestStep)
-
-    //Extracting coordinates
-    let coord = latestStep.split(" ")[1];
-    let r = parseInt(coord.split('-')[0]);
-    let c = parseInt(coord.split('-')[1]);
-
-    if (latestStep.startsWith('flag')) {
-        nMines--
-        minesCountText.innerText = `${nMines}/${totalMines}`
-        unDoubt(r, c);
-    }
-    if (latestStep.startsWith('doubt')) {
-        flag(r, c);
-    }
-    if (latestStep.startsWith('undoubt')) {
-        nMines++;
-        doubt(r, c);
-    }
-    if (latestStep.startsWith('open ')) {
-        coverTile(r, c);
+    if(stopped) {
+        unblow() 
     }
 }
-
-function coverTile(i, j) {
-    if (mines[i][j].discovered == false) return;
-
-    mines[i][j].discovered = false
-    squares[i * gridWidth + j].style.background = "#ffff"
-    nMinesDiscovered--
-    mines[i][j].manuallyOpened = false;
-    if (mines[i][j].adjancentMines != 0) {
-        squares[i * gridWidth + j].innerText = '';
-        return;
-    }
-
-    if ((i - 1 >= 0) && (j - 1 >= 0) && !mines[i - 1][j - 1].manuallyOpened) {
-        coverTile(i - 1, j - 1)
-    }
-    if (i - 1 >= 0 && !mines[i - 1][j].manuallyOpened) {
-        coverTile(i - 1, j)
-    }
-    if ((i - 1 >= 0) && (j + 1 < mines[i].length) && !mines[i - 1][j + 1].manuallyOpened) {
-        coverTile(i - 1, j + 1)
-    }
-    if (j - 1 >= 0 && !mines[i][j - 1].manuallyOpened) {
-        coverTile(i, j - 1)
-    }
-    if (j + 1 < mines[i].length && !mines[i][j + 1].manuallyOpened) {
-        coverTile(i, j + 1)
-    }
-    if ((i + 1 < mines.length) && (j - 1 >= 0) && !mines[i + 1][j - 1].manuallyOpened) {
-        coverTile(i + 1, j - 1)
-    }
-    if ((i + 1 < mines.length) && !mines[i + 1][j].manuallyOpened) {
-        coverTile(i + 1, j)
-    }
-    if ((i + 1 < mines.length) && (j + 1 < mines[i].length) && !mines[i + 1][j + 1].manuallyOpened) {
-        coverTile(i + 1, j + 1)
-    }
-
-
-    return
+function unblow(i,j) {
+    
 }
+
 
 const setMines = () => {
     let minesToPopulate = totalMines
@@ -260,18 +195,11 @@ const floodFill = (i, j, manualClick) => {
             stopped = true
         }
         if (mines[i][j].adjancentMines != 0) {
-            if (manualClick == true) {
-                stepRecord.push("open " + i + "-" + j);
-                mines[i][j].manuallyOpened = true;
-            }
             squares[i * gridWidth + j].innerText = mines[i][j].adjancentMines
             return
         }
     }
-    if (manualClick == true) {
-        stepRecord.push("open " + i + "-" + j);
-        mines[i][j].manuallyOpened = true;
-    }
+
     if ((i - 1 >= 0) && (j - 1 >= 0)) {
         floodFill(i - 1, j - 1, false)
     }
@@ -317,13 +245,13 @@ const putFlag = (i, j) => {
 
     if (mines[i][j].discovered || stopped) return;
     if (!mines[i][j].flagType) {
-        stepRecord.push("flag " + i + "-" + j);
+        
         flag(i, j);
     } else if (mines[i][j].flagType === FLAG_TYPES.OK) {
-        stepRecord.push("doubt " + i + "-" + j);
+        
         doubt(i, j);
     } else if (mines[i][j].flagType === FLAG_TYPES.DOUBT) {
-        stepRecord.push('undoubt ' + i + "-" + j);
+        
         unDoubt(i, j);
     }
 }
