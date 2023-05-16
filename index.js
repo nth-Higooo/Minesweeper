@@ -246,7 +246,9 @@ const checkMine = (i, j) => {
 
 const floodFill = (i, j, manualClick) => {
 
-    if (mines[i][j].discovered || mines[i][j].mine) {
+    if (mines[i][j].discovered || mines[i][j].mine 
+        || mines[i][j].flagType === FLAG_TYPES.OK
+        || mines[i][j].flagType === FLAG_TYPES.DOUBT) {
         return
     } else {
         mines[i][j].discovered = true
