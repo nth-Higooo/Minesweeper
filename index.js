@@ -164,20 +164,59 @@ const setAdjancentMines = () => {
 }
 
 const checkMine = (i, j) => {
-    if (stopped) return
+    if (stopped) return;
 
     if (firstClick) {
-        firstClick = false
-        startTimer()
+        firstClick = false;
+        startTimer();
     }
-    if (mines[i][j].flagType === FLAG_TYPES.OK) return
+
+    if (mines[i][j].flagType === FLAG_TYPES.OK) return;
     if (mines[i][j].mine) {
-        blow()
-        stopped = true
+        blow();
+        stopped = true;
+    } else if (mines[i][j].adjancentMines > 0 && mines[i][j].discovered) {
+        if (checkAdjacentFlags(i, j)) {
+            autoOpenAdjacentCells(i, j);
+        }
     } else {
-        floodFill(i, j, true)
+        floodFill(i, j, true);
     }
-}
+};
+
+const checkAdjacentFlags = (i, j) => {
+    let adjacentFlags = 0;
+
+    // Kiểm tra các ô xung quanh
+    for (let row = i - 1; row <= i + 1; row++) {
+        for (let col = j - 1; col <= j + 1; col++) {
+            if (row >= 0 && row < gridHeight && col >= 0 && col < gridWidth) {
+                if (mines[row][col].flagType === FLAG_TYPES.OK) {
+                    adjacentFlags++;
+                }
+            }
+        }
+    }
+
+    return adjacentFlags === mines[i][j].adjancentMines;
+};
+
+const autoOpenAdjacentCells = (i, j) => {
+    for (let row = i - 1; row <= i + 1; row++) {
+        for (let col = j - 1; col <= j + 1; col++) {
+            if (row >= 0 && row < gridHeight && col >= 0 && col < gridWidth) {
+                if (!mines[row][col].discovered && mines[row][col].flagType !== FLAG_TYPES.OK) {
+                    if (mines[row][col].mine) {
+                        blow();
+                        stopped = true;
+                    } else {
+                        floodFill(row, col, false);
+                    }
+                }
+            }
+        }
+    }
+};
 
 const floodFill = (i, j, manualClick) => {
 
