@@ -44,7 +44,6 @@ let interval
 
 class Square {
     constructor({ }) {
-        this.manuallyOpened = false;
         this.mine = false
         this.discovered = false
         this.adjacentMines = 0
@@ -180,7 +179,7 @@ const checkMine = (i, j) => {
             autoOpenAdjacentCells(i, j);
         }
     } else {
-        floodFill(i, j, true);
+        floodFill(i, j);
     }
 };
 
@@ -210,7 +209,7 @@ const autoOpenAdjacentCells = (i, j) => {
                         blow();
                         stopped = true;
                     } else {
-                        floodFill(row, col, false);
+                        floodFill(row, col);
                     }
                 }
             }
@@ -218,7 +217,7 @@ const autoOpenAdjacentCells = (i, j) => {
     }
 };
 
-const floodFill = (i, j, manualClick) => {
+const floodFill = (i, j) => {
 
     if (mines[i][j].discovered || mines[i][j].mine 
         || mines[i][j].flagType === FLAG_TYPES.OK
@@ -240,28 +239,28 @@ const floodFill = (i, j, manualClick) => {
     }
 
     if ((i - 1 >= 0) && (j - 1 >= 0)) {
-        floodFill(i - 1, j - 1, false)
+        floodFill(i - 1, j - 1)
     }
     if (i - 1 >= 0) {
-        floodFill(i - 1, j, false)
+        floodFill(i - 1, j)
     }
     if ((i - 1 >= 0) && (j + 1 < mines[i].length)) {
-        floodFill(i - 1, j + 1, false)
+        floodFill(i - 1, j + 1)
     }
     if (j - 1 >= 0) {
-        floodFill(i, j - 1, false)
+        floodFill(i, j - 1)
     }
     if (j + 1 < mines[i].length) {
-        floodFill(i, j + 1, false)
+        floodFill(i, j + 1)
     }
     if ((i + 1 < mines.length) && (j - 1 >= 0)) {
-        floodFill(i + 1, j - 1, false)
+        floodFill(i + 1, j - 1)
     }
     if ((i + 1 < mines.length)) {
-        floodFill(i + 1, j, false)
+        floodFill(i + 1, j)
     }
     if ((i + 1 < mines.length) && (j + 1 < mines[i].length)) {
-        floodFill(i + 1, j + 1, false)
+        floodFill(i + 1, j + 1)
     }
     return
 }
