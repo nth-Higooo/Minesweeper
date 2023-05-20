@@ -7,8 +7,8 @@
   <li>Tạ Vĩ Khang ITITIU20226</li>
   <li>Lê Hoàng Thái Tuấn ITITIU20340</li>
 </h3>
-<p>This README contains all about the creating of MINESWEEPER game by using HTML,CSS and JS. Also,we have applied the Augmented Reality (AR) technology to play game </p>
-<h2>Here is the list of contents:</h2>
+<p>This README contains all about the creating of MINESWEEPER game by using HTML,CSS and JS. Also,we have applied the Augmented Reality (AR) technology to play game to give you have a new experience </p>
+<h2>Here is the table of contents:</h2>
 <h3>
  <ol>
     <li>Description</li>
@@ -18,6 +18,7 @@
     <li>Features</li>
     <li>Show game</li>
     <li>Contribution</li>
+    <li>Documentation</li>
  </ol>
 </h3>  
 
@@ -30,24 +31,30 @@ MINESWEEPER features customizable difficulty levels, allowing both beginners and
 
 With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate test of your logic and deduction skills. Prepare yourself for a mind-boggling adventure and unravel the mysteries hidden beneath the surface!</p>
 <h2>2. GAMEPLAY</h2>
-<p>All you need to do in this solving game is find and determine all of the mines are hidden under the squares in the definitely area. We will provide for you the flags to mark the square you think has a mine. Moreover, to exactly know which places will contain the mine, you need to check the square has a number that you have opened or it appeared before. The number you see on the square is the way for you to find the solution, it will represent all the mines have under the 3x3 area- which the square contains number is the center.The image will show you specifically about that is:</p>
+<p>All you need to do in this solving game is find and determine all of the mines are hidden under the squares in the definitely area. We will provide for you the flags to mark the square you think has a mine. Moreover, to exactly know which places will contain the mine, you need to check the square has a number that you have opened or it appeared before. The number you see on the square is the way for you to find the solution, it will represent all the mines have under the 3x3 area- which the square contains number is the center.Example: The center square of the 3x3 area is "2", which means there are 2 mines around (both mines are marked by flags).The image will explain to you specifically about that is:</p>
 
 <p align="center"><img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROlsmR4iXzwERNgKgK5ku8wO7SuBr1RpRUsg&usqp=CAU" alt="Mines"></p>
 
-<p align="center"><b>Figure:The center square of the 3x3 area is "2," which means there are 2 mines around (both are marked by flags).</b></p>
+<p align="center"><b>Figure: Example</b></p>
 
 <p>The game is ended whenever you find the mines and open all the squares that don't have mine under</p>
 <p>You had no idea what happened when you opened the square. Maybe the first time you touch the first square, you'll get a mine and lose the game. Isn't it difficult to play? That's why we provide an undo button <img></img> to assist you have a wonderful experience. This button will take you back to the last time you touched the mine, whether it was the first time or whenever you opened the squares, and offer you another chance to find new way to live.</p>
+
 <h2>3. PLATFORM</h2>
 <p>We using 2 platforms to let you play this game by using web browser and AR mode using facebook camera app.</p>
-<h4>Here is the platform of web browser:</h4>
+<h3>Here is the platform of web browser:</h3>
 <p align="center"><img align="center" src="READMEpic/webbrowser.png" alt="WEB"></p>
 
 <p align="center"><b>Figure: Web browser platform</b></p>
-<h4>To use AR mode, using scanner to scan this picture below (we also add AR mode directly to the web browser)</h4>
+<h3>To use AR mode, using scanner to scan this picture below (we also add AR mode directly to the web browser)</h3>
 <a href='https://www.youtube.com/watch?v=xvFZjo5PgG0'>Click here to scan</a>
+<h3>Platfrom of AR mode</h3>
+<p align="center"><img align="center" src="READMEpic/AR.jpg" alt="AR"></p>
+<p align="center"><b>Figure: AR platform</b></p>
+<h4>Note: To run the web browser, please download the .zip file and run 'index.html'</h4>
+
 <h2>4. TUTORIALS</h2>
-<h3>First, we want to guide you the basic of how to play this game:</h3>
+<h3>First, we want to guide you the basic of how to play this game from web browser:</h3>
 <ul>
    <li>Select the level to play the game</li>
    <li>Click start to render the game</li>
@@ -63,7 +70,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
    <li></li>
 </ul>
 
-<p>Remember to open all the squares that don't include the mine to finish the game</p>
+<p><b>NOTED</b>Remember to open all the squares that don't include the mine to finish the game</p>
 
 <h2>5. FEATURES</h2>
  
@@ -74,4 +81,12 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 <p></p>
 
 <h2>6. SHOW GAME</h2>
-<h2>7. CONTRIBUTION</h2>
+
+<h2><img src='READMEpic/teamwork.png' alt='member'><img>7. CONTRIBUTION</h2>
+<h4>
+  <li>AR building: Hồ Hữu Hiệp</li>
+  <li>Main web browser building: Nguyễn Thanh Hiền</li>
+  <li>Support: Lê Quý Minh Đức, Tạ Vĩ Khang, Lê Hoàng Thái Tuấn</li>
+</h4>
+
+<h2>8. DOCUMENTATION</h2>
