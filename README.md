@@ -7,7 +7,7 @@
   <li>Tạ Vĩ Khang ITITIU20226</li>
   <li>Lê Hoàng Thái Tuấn ITITIU20340</li>
 </h3>
-<p>This README contains all about the creating of MINESWEEPER game by using HTML,CSS and JS. Also,we have applied the Augmented Reality (AR) technology to play game to give you have a new experience </p>
+<h3>This README contains all about the creating of MINESWEEPER game by using HTML,CSS and JS. Also,we have applied the Augmented Reality (AR) technology to play game to give you have a new experience </h3>
 <h2>Here is the table of contents:</h2>
 <h3>
  <ol>
