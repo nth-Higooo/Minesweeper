@@ -2,7 +2,7 @@
 <h2>Welcome to our project. We are team ... of DSA group. Our members include: </h2>
 <h3>
   <li>Hồ Hữu Hiệp ITITIU20202</li>
-  <li>Nguyễn Thanh Hiền ITITIU20</li>
+  <li>Nguyễn Thanh Hiền ITITIU20142</li>
   <li>Lê Quý Minh Đức ITITIU20188</li>
   <li>Tạ Vĩ Khang ITITIU20226</li>
   <li>Lê Hoàng Thái Tuấn ITITIU20340</li>
@@ -38,7 +38,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 <p align="center"><b>Figure: Example</b></p>
 
 <p>The game is ended whenever you find the mines and open all the squares that don't have mine under</p>
-<p>You had no idea what happened when you opened the square. Maybe the first time you touch the first square, you'll get a mine and lose the game. Isn't it difficult to play? That's why we provide an undo button <img></img> to assist you have a wonderful experience. This button will take you back to the last time you touched the mine, whether it was the first time or whenever you opened the squares, and offer you another chance to find new way to live.</p>
+<p>You had no idea what happened when you opened the square. Maybe the first time you touch the first square, you'll get a mine and lose the game. Isn't it difficult to play? That's why we provide a redo button <img></img> to assist you have a wonderful experience. This button will take you back to the last time you touched the mine, whether it was the first time or whenever you opened the squares, and offer you another chance to find new way to live.</p>
 
 <h2><img src='READMEpic/platform.png' alt='platform' width='25px' height='25px'><img> 3. PLATFORM</h2>
 <p>We using 2 platforms to let you play this game by using web browser and AR mode using facebook camera app.</p>
@@ -61,16 +61,24 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
    <li>From the game, left-click in any square to open it</li>
    <li>Right-click to put the flag in the squares you want</li>
    <li>Right-click in the square that has flag once again to create the predict flag</li>
-   <li>In the 3x3 area, if the center square contains number and around it has enough flag similar to the number, left-click to open all the squares around in the 3x3 area automatically</li>
-   <li>You can redo the game when you opened the mines, click the redo button to rollback the before choices</li>
+   <li>In the 3x3 area, if the center square contains number and around it has enough flag similar to the number, left-click to open all the squares around automatically</li>
+   <li>You can redo the game many times when you open and receive the mines. Click the redo button to rollback your choices.</li>
    <li>Click restart button or select different level when you want to create a new game <li>
 </ul>
 <h3>Next, we also guide you how to play this game on AR mode</h3>
 <ul>
-   <li></li>
+   <li>Note: AR mode only can use on mobile phone or tablet</li>
+   <li>Find the good place for playing if you don't want to stand and play</li>
+   <li>Select level to play the game</li>
+   <li>After finish rendering, the board will appear and you just touch to open the square</li>
+   <li>There has the flag icon, touch on that to put the flag into where you want </li>
+   <li>In the 3x3 area, if the center square contains number and around it has enough flag similar to the number, touch and hold the square to open all the squares aroud automatically</li>
+   <li>You can redo the game many times when you open and receive the mines. Touch the redo icon to rollback your choices.</li>
+   <li>Touch restart, new game or change difficulty icon to select what you want to play (play again, replace new mines or change difficulty)</li>
+
 </ul>
 
-<p><b>NOTED</b>Remember to open all the squares that don't include the mine to finish the game</p>
+<p><b>NOTED:</b> Remember to open all the squares that don't include the mine to finish the game</p>
 
 <h2><img src='READMEpic/settings.png' alt='member' width='25px' height='25px'><img> 5. FEATURES</h2>
  
