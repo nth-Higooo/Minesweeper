@@ -11,7 +11,7 @@
 <ol>
     <li>Description</li>
     <li>Gameplay</li>
-    <li>How to play ?</li>
+    <li>Where to play ?</li>
     <li>Features</li>
     <li>Application</li>
 
@@ -25,3 +25,12 @@ Explore a grid of tiles, each concealing a number or a hidden mine. The numbers 
 MINESWEEPER features customizable difficulty levels, allowing both beginners and experienced players to enjoy the game at their preferred pace. Unleash your problem-solving prowess, improve your best scores, and compete with friends to claim the top spot on the leaderboard.
 
 With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate test of your logic and deduction skills. Prepare yourself for a mind-boggling adventure and unravel the mysteries hidden beneath the surface!</p>
+
+<h2>2.GAMEPLAY</h2>
+<p>Your main duty in this game is find and determine the hidden mines under the squares.
+
+
+But be careful, the game is harder than you think!
+You can touch the mine at the beginning of the game and lose immediately. And we think all you guys don't want to have a bad ending at the beginning so early, right? That's why we provide for you an undo button so that you can reset your chance and find another way to survive </p>
+<h2>3.WHERE TO PLAY ?</h2>
+<p>We now </p>
