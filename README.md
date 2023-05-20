@@ -82,9 +82,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 
 <h2>6. SHOW GAME</h2>
 
-<<<<<<< HEAD
 <h2><img src='READMEpic/teamwork.png' alt='member' width='25px' height='25px'><img> 7. CONTRIBUTION</h2>
-=======
 
 <h4>
   <li>AR building: Hồ Hữu Hiệp</li>
@@ -92,8 +90,4 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
   <li>Support: Lê Quý Minh Đức, Tạ Vĩ Khang, Lê Hoàng Thái Tuấn</li>
 </h4>
 
-<<<<<<< HEAD
 <h2><img src='READMEpic/documents.png' alt='member' width='25px' height='25px'><img> 8. DOCUMENTATION</h2>
-=======
-<h2>8. DOCUMENTATION</h2>
->>>>>>> e96e9a3c7586df267cb8c85e37376423033d9b9c
