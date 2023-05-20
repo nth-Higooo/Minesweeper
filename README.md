@@ -22,7 +22,7 @@
  </ol>
 </h3>  
 
-<h2>1. DESCRIPTION</h2>
+<h2><img src='READMEpic/job-seeking.png' alt='des' width='25px' height='25px'><img> 1. DESCRIPTION</h2>
 <p>MINESWEEPER is a classic puzzle game that challenges your strategic thinking and deduction skills. Embark on a thrilling adventure as you navigate through a minefield, carefully revealing hidden mines while avoiding dangerous explosions. With its simple yet addictive gameplay, Minesweeper offers hours of entertainment for players of all ages.
 
 Explore a grid of tiles, each concealing a number or a hidden mine. The numbers indicate how many mines are adjacent to a particular tile, guiding you in your quest to identify and mark the mines correctly. But be cautious! A single wrong move can trigger a catastrophic chain reaction, ending your game. As you progress, the minefields become increasingly challenging, testing your ability to analyze patterns and make precise decisions.
@@ -30,7 +30,7 @@ Explore a grid of tiles, each concealing a number or a hidden mine. The numbers 
 MINESWEEPER features customizable difficulty levels, allowing both beginners and experienced players to enjoy the game at their preferred pace. Unleash your problem-solving prowess, improve your best scores, and compete with friends to claim the top spot on the leaderboard.
 
 With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate test of your logic and deduction skills. Prepare yourself for a mind-boggling adventure and unravel the mysteries hidden beneath the surface!</p>
-<h2>2. GAMEPLAY</h2>
+<h2><img src='READMEpic/gaming.png' alt='member' width='25px' height='25px'><img> 2. GAMEPLAY</h2>
 <p>All you need to do in this solving game is find and determine all of the mines are hidden under the squares in the definitely area. We will provide for you the flags to mark the square you think has a mine. Moreover, to exactly know which places will contain the mine, you need to check the square has a number that you have opened or it appeared before. The number you see on the square is the way for you to find the solution, it will represent all the mines have under the 3x3 area- which the square contains number is the center.Example: The center square of the 3x3 area is "2", which means there are 2 mines around (both mines are marked by flags).The image will explain to you specifically about that is:</p>
 
 <p align="center"><img align="center" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROlsmR4iXzwERNgKgK5ku8wO7SuBr1RpRUsg&usqp=CAU" alt="Mines"></p>
@@ -40,7 +40,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 <p>The game is ended whenever you find the mines and open all the squares that don't have mine under</p>
 <p>You had no idea what happened when you opened the square. Maybe the first time you touch the first square, you'll get a mine and lose the game. Isn't it difficult to play? That's why we provide an undo button <img></img> to assist you have a wonderful experience. This button will take you back to the last time you touched the mine, whether it was the first time or whenever you opened the squares, and offer you another chance to find new way to live.</p>
 
-<h2>3. PLATFORM</h2>
+<h2><img src='READMEpic/platform.png' alt='platform' width='25px' height='25px'><img> 3. PLATFORM</h2>
 <p>We using 2 platforms to let you play this game by using web browser and AR mode using facebook camera app.</p>
 <h3>Here is the platform of web browser:</h3>
 <p align="center"><img align="center" src="READMEpic/webbrowser.png" alt="WEB"></p>
@@ -53,7 +53,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 <p align="center"><b>Figure: AR platform</b></p>
 <h4>Note: To run the web browser, please download the .zip file and run 'index.html'</h4>
 
-<h2>4. TUTORIALS</h2>
+<h2><img src='READMEpic/video-tutorials.png' alt='member' width='25px' height='25px'><img> 4. TUTORIALS</h2>
 <h3>First, we want to guide you the basic of how to play this game from web browser:</h3>
 <ul>
    <li>Select the level to play the game</li>
@@ -72,7 +72,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 
 <p><b>NOTED</b>Remember to open all the squares that don't include the mine to finish the game</p>
 
-<h2>5. FEATURES</h2>
+<h2><img src='READMEpic/settings.png' alt='member' width='25px' height='25px'><img> 5. FEATURES</h2>
  
 <h3>For browswer</h3>
 <p> </p>
@@ -82,11 +82,11 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 
 <h2>6. SHOW GAME</h2>
 
-<h2><img src='READMEpic/teamwork.png' alt='member'><img>7. CONTRIBUTION</h2>
+<h2><img src='READMEpic/teamwork.png' alt='member' width='25px' height='25px'><img> 7. CONTRIBUTION</h2>
 <h4>
   <li>AR building: Hồ Hữu Hiệp</li>
   <li>Main web browser building: Nguyễn Thanh Hiền</li>
   <li>Support: Lê Quý Minh Đức, Tạ Vĩ Khang, Lê Hoàng Thái Tuấn</li>
 </h4>
 
-<h2>8. DOCUMENTATION</h2>
+<h2><img src='READMEpic/documents.png' alt='member' width='25px' height='25px'><img> 8. DOCUMENTATION</h2>
