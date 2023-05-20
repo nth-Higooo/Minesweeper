@@ -16,7 +16,7 @@
     <li>Platform</li>
     <li>Tutorial</li>
     <li>Features</li>
-    <li>Show game</li>
+    <li>Scope</li>
     <li>Contribution</li>
     <li>Documentation</li>
  </ol>
@@ -37,7 +37,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 
 <p align="center"><b>Figure: Example</b></p>
 
-<p>The game is ended whenever you find the mines and open all the squares that don't have mine under</p>
+<p>The game is ended whenever you find the mines and open all the squares that don't have mine under.</p>
 <p>You had no idea what happened when you opened the square. Maybe the first time you touch the first square, you'll get a mine and lose the game. Isn't it difficult to play? That's why we provide a redo button <img></img> to assist you have a wonderful experience. This button will take you back to the last time you touched the mine, whether it was the first time or whenever you opened the squares, and offer you another chance to find new way to live.</p>
 
 <h2><img src='READMEpic/platform.png' alt='platform' width='25px' height='25px'><img> 3. PLATFORM</h2>
@@ -46,35 +46,35 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 <p align="center"><img align="center" src="READMEpic/webbrowser.png" alt="WEB"></p>
 
 <p align="center"><b>Figure: Web browser platform</b></p>
-<h3>To use AR mode, using scanner to scan this picture below (we also add AR mode directly to the web browser)</h3>
-<a href='https://www.youtube.com/watch?v=xvFZjo5PgG0'>Click here to scan</a>
+<h3>To use AR mode, using scanner to scan this picture below (we also add AR mode directly to the web browser).</h3>
+<a href='https://www.youtube.com/watch?v=xvFZjo5PgG0'>Click here to scan!</a>
 <h3>Platfrom of AR mode</h3>
 <p align="center"><img align="center" src="READMEpic/AR.jpg" alt="AR"></p>
 <p align="center"><b>Figure: AR platform</b></p>
-<h4>Note: To run the web browser, please download the .zip file and run 'index.html'</h4>
+<h4>Note: To run the web browser, please download the .zip file and run 'index.html'.</h4>
 
 <h2><img src='READMEpic/video-tutorials.png' alt='member' width='25px' height='25px'><img> 4. TUTORIALS</h2>
 <h3>First, we want to guide you the basic of how to play this game from web browser:</h3>
 <ul>
-   <li>Select the level to play the game</li>
-   <li>Click start to render the game</li>
-   <li>From the game, left-click in any square to open it</li>
-   <li>Right-click to put the flag in the squares you want</li>
-   <li>Right-click in the square that has flag once again to create the predict flag</li>
-   <li>In the 3x3 area, if the center square contains number and around it has enough flag similar to the number, left-click to open all the squares around automatically</li>
+   <li>Select the level to play the game.</li>
+   <li>Click start to render the game.</li>
+   <li>From the game, left-click in any square to open it.</li>
+   <li>Right-click to put the flag in the squares you want.</li>
+   <li>Right-click in the square that has flag once again to create the predict flag.</li>
+   <li>In the 3x3 area, if the center square contains number and around it has enough flag similar to the number, left-click to open all the squares around automatically.</li>
    <li>You can redo the game many times when you open and receive the mines. Click the redo button to rollback your choices.</li>
-   <li>Click restart button or select different level when you want to create a new game <li>
+   <li>Click restart button or select different level when you want to create a new game. <li>
 </ul>
 <h3>Next, we also guide you how to play this game on AR mode</h3>
 <ul>
-   <li>Note: AR mode only can use on mobile phone or tablet</li>
-   <li>Find the good place for playing if you don't want to stand and play</li>
-   <li>Select level to play the game</li>
-   <li>After finish rendering, the board will appear and you just touch to open the square</li>
-   <li>There has the flag icon, touch on that to put the flag into where you want </li>
-   <li>In the 3x3 area, if the center square contains number and around it has enough flag similar to the number, touch and hold the square to open all the squares aroud automatically</li>
+   <li>Note: AR mode only can use on mobile phone or tablet.</li>
+   <li>Find the good place for playing if you don't want to stand and play.</li>
+   <li>Select level to play the game.</li>
+   <li>After finish rendering, the board will appear and you just touch to open the square.</li>
+   <li>There has the flag icon, touch on that to put the flag into where you want. </li>
+   <li>In the 3x3 area, if the center square contains number and around it has enough flag similar to the number, touch and hold the square to open all the squares aroud automatically.</li>
    <li>You can redo the game many times when you open and receive the mines. Touch the redo icon to rollback your choices.</li>
-   <li>Touch restart, new game or change difficulty icon to select what you want to play (play again, replace new mines or change difficulty)</li>
+   <li>Touch restart, new game or change difficulty icon to select what you want to play (play again, replace new mines or change difficulty).</li>
 
 </ul>
 
@@ -82,13 +82,74 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 
 <h2><img src='READMEpic/settings.png' alt='member' width='25px' height='25px'><img> 5. FEATURES</h2>
  
-<h3>For browswer</h3>
-<p> </p>
+<h3>This content will explain about which features do we use to build this game</h3>
+<ol>
+<li><h4>Grid Initialization:</h4></li>
+<ul>
+  <li>The game initializes a grid of squares, displayed on the board.</li>
+  <li>The size of the grid can be adjusted based on the selected level (small, medium, large).</li>
+</ul>
+<li><h4>Mine Placement:</h4></li>
+<ul>
+  <li>Mines are randomly placed on the grid.</li>
+  <li>The number of mines is determined based on a formula: twice the square root of the grid area.</li>
+</ul>
+<li><h4>Square Class:</h4></li>
+<ul>
+  <li>Represents each square on the grid.</li>
+  <li>Contains properties such as mine, discovered, adjacentMines, and flagType.</li>
+  <li>The flagType property can be set to OK or DOUBT, representing a flagged square or a square with a doubtful flag.</li>
+</ul>
+<li><h4>Event Listeners:</h4>
+<ul>
+  <li>Event listeners are added to each square on the grid.</li>
+  <li>Left-clicking on a square checks if it contains a mine or adjacent mines.</li>
+  <li>Right-clicking on a square places a flag or changes the flag type.</li>
+</ul>
+<li><h4>Checking for Mines:</h4></li>
+<ul>
+  <li>When a square is clicked, the game checks if it contains a mine.</li>
+  <li>If a mine is found, the game ends, and all mines are revealed.</li>
+  <li>If the square has adjacent mines, it reveals the number of adjacent mines.</li>
+  <li>If the square has no adjacent mines, it performs a flood-fill algorithm to reveal surrounding squares.</li>
+</ul>
+<li><h4>Flagging and Doubting:</h4></li>
+<ul>
+  <li>Right-clicking on a square toggles between placing a flag and doubting the presence of a mine.</li>
+  <li>The number of flagged squares is displayed, indicating the remaining mines.</li>
+</ul>  
+<li><h4>Timer and Stopwatch:</h4></li>
+<ul>
+  <li>The game includes a timer that tracks the elapsed time.</li>
+  <li>The stopwatch function updates the timer display every second.</li>
+  <li>The timer starts when the first square is clicked.</li>
+</ul>
+<li><h4>Pause and Continue:</h4></li>
+<ul>
+  <li>The game includes a pause button that pauses or resumes the game.</li>
+  <li>When paused, the grid becomes hidden, and the timer stops.</h4>
+</ul>
+<li><h4>Restarting the Game:</h4>
+<ul>
+  <li>The game can be restarted by selecting a new level.</li>
+  <li>It clears the grid, resets variables, and generates a new grid with mines.</li>
+</ul>
+<li><h4>User Interface:</h4>
+<ul>
+  <li>The game interface includes a board, a grid to display squares, and buttons for pause and restart.</li>
+  <li>The number of remaining mines is displayed.</li>
+  <li>The game also includes a hamburger icon that expands or collapses the navigation bar.</li>
+</ul>
+</ol>
 
-<h3>For AR on facebook app</h3>
-<p></p>
-
-<h2>6. SHOW GAME</h2>
+<h2>6. SCOPE</h2>
+<h3>In the future, we have some plan for improving the quality of MINESWEEPER. There are about:</h3>
+<p>-
+-
+-
+-
+-
+</p>
 
 <h2><img src='READMEpic/teamwork.png' alt='member' width='25px' height='25px'><img> 7. CONTRIBUTION</h2>
 
