@@ -1,5 +1,5 @@
 # Minesweeper
-<h2>Welcome to work with our project. We are team ... of DSA group. Our members include: </h2>
+<h2>Welcome to our project. We are team ... of DSA group. Our members include: </h2>
 <h3>
   <li>Hồ Hữu Hiệp ITITIU20202</li>
   <li>Nguyễn Thanh Hiền ITITIU20</li>
@@ -43,8 +43,8 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 <h4>Here is the platform of web browser:</h4>
 <p align="center"><img align="center" src="READMEpic/webbrowser.png" alt="WEB"></p>
 
-<p align="center"><b>Figure:Web browser platform</b></p>
-<p>The AR mode can play by using scanner to scan this QR code:</p>
+<p align="center"><b>Figure: Web browser platform</b></p>
+<h4>To use AR mode, using scanner to scan this picture below (we also add AR mode directly to the web browser)</h4>
 <a href='https://www.youtube.com/watch?v=xvFZjo5PgG0'>Click here to scan</a>
 <h2>4. TUTORIALS</h2>
 <h3>First, we want to guide you the basic of how to play this game:</h3>
