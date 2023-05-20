@@ -82,7 +82,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 
 <h2>6. SHOW GAME</h2>
 
-<h2><img src='READMEpic/teamwork.png' alt='member'><img>7. CONTRIBUTION</h2>
+<h2><img src='READMEpic/teamwork.png' alt='member' width='50px' height='50px'><img>7. CONTRIBUTION</h2>
 <h4>
   <li>AR building: Hồ Hữu Hiệp</li>
   <li>Main web browser building: Nguyễn Thanh Hiền</li>
