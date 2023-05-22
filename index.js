@@ -25,6 +25,7 @@ let nMines
 let totalMines
 let nMinesDiscovered
 
+let loseByTaKhang = false;
 let stopped
 let paused
 let firstClick
@@ -39,6 +40,7 @@ let hours
 let interval
 let lastClickedCoordinates = { i: -1, j: -1 }
 
+var autoOpenedSquares = []
 //sticky navbar
 window.onscroll = function() {
     var header = document.querySelector('header')
@@ -63,26 +65,39 @@ class Square {
 
 //redo func
 const redo = () => {
-    if (stopped && lastClickedCoordinates.i !== -1 && lastClickedCoordinates.j !== -1) {
+    //này chủ yếu cover hết Mine
+    if (stopped) {
         stopped = false;
-        squares[lastClickedCoordinates.i * gridWidth + lastClickedCoordinates.j].innerHTML = '';
-        mines[lastClickedCoordinates.i][lastClickedCoordinates.j].discovered = false;
-        if (mines[lastClickedCoordinates.i][lastClickedCoordinates.j].adjacentMines > 0) {
-            squares[lastClickedCoordinates.i * gridWidth + lastClickedCoordinates.j].innerText = mines[lastClickedCoordinates.i][lastClickedCoordinates.j].adjacentMines;
-        }
-
         for (let i = 0; i < gridHeight; i++) {
             for (let j = 0; j < gridWidth; j++) {
                 const square = squares[i * gridWidth + j];
-                if (!mines[i][j].discovered) {
+                if (mines[i][j].mine) {
                     square.innerHTML = '';
-                    if (mines[i][j].adjacentMines > 0) {
-                        square.innerText = mines[i][j].adjacentMines;
-                    }
+                    mines[i][j].discovered = false;
                 }
+                if(mines[i][j].flagType === FLAG_TYPES.OK) flag(i,j)    //trước khi dính bom mà chỗ đó có cờ mà vô tình bom che lấp thì flag lại thui
+                if(mines[i][j].flagType === FLAG_TYPES.DOUBT) doubt(i,j) //tương tự cho doubt
             }
         }
     }
+    //thua tại tạ khang
+    if(loseByTaKhang) {
+
+        // autoOpenedSquares là cái array lưu các ô tự mở bởi tạ khang
+        loseByTaKhang = false;
+        let latestStep = autoOpenedSquares[autoOpenedSquares.length-1]
+        autoOpenedSquares.pop();
+        for(let i = latestStep.length-1; i>=0;i--) {
+            let row = parseInt(latestStep[i].split("-")[0]);
+            let col = parseInt(latestStep[i].split("-")[1]);
+            squares[row*gridWidth+col].innerHTML = ''; //xóa số
+            squares[row* gridWidth+col].style.background = "#ffffff" // trả lại màu trắng
+            mines[row][col].discovered = false; //chưa mở
+            nMinesDiscovered--;
+        }
+    }
+
+
     startTimer();
     warningBox.style.display = 'none';
 }
@@ -208,7 +223,7 @@ const checkMine = (i, j) => {
             autoOpenAdjacentCells(i, j)
         }
     } else {
-        floodFill(i, j)
+        floodFill(i, j,false)
     }
     checkWin()
 }
@@ -229,7 +244,24 @@ const checkAdjacentFlags = (i, j) => {
     return adjacentFlags === mines[i][j].adjancentMines
 }
 
+const checkSurroundingUndiscoveredSquares= (i,j) => {
+    let count = 0;
+    let numTile = 0;
+    for (let row = i - 1; row <= i + 1; row++) {
+        for (let col = j - 1; col <= j + 1; col++) {
+            if (row >= 0 && row < gridHeight && col >= 0 && col < gridWidth) {
+                numTile++;
+                if(!mines[i][j].discovered && !mines[i][j].FLAG_TYPES) {
+                    count++;
+                }
+            }
+        }
+    }
+    return count < numTile;
+}
+
 const autoOpenAdjacentCells = (i, j) => {
+    if(checkSurroundingUndiscoveredSquares(i,j)) autoOpenedSquares.push([])
     for (let row = i - 1; row <= i + 1; row++) {
         for (let col = j - 1; col <= j + 1; col++) {
             if (row >= 0 && row < gridHeight && col >= 0 && col < gridWidth) {
@@ -237,16 +269,20 @@ const autoOpenAdjacentCells = (i, j) => {
                     if (mines[row][col].mine) {
                         blow(row,col)
                         stopped = true
+                        loseByTaKhang = true;
                     } else {
-                        floodFill(row, col)
+                        floodFill(row, col, true)
+                        
                     }
                 }
             }
         }
     }
+    console.log(autoOpenedSquares)
 }
 
-const floodFill = (i, j) => {
+
+const floodFill = (i, j, autoOpen) => {
 
     if (mines[i][j].discovered || mines[i][j].mine 
         || mines[i][j].flagType === FLAG_TYPES.OK
@@ -256,6 +292,10 @@ const floodFill = (i, j) => {
         mines[i][j].discovered = true
         squares[i * gridWidth + j].style.background = "#c8def1"
         nMinesDiscovered++
+
+        if(autoOpen) {
+            autoOpenedSquares[autoOpenedSquares.length-1].push(i+"-"+j);
+        }
 
         if (nMinesDiscovered === gridWidth * gridHeight - totalMines) {
             stopped = true
@@ -267,28 +307,28 @@ const floodFill = (i, j) => {
     }
 
     if ((i - 1 >= 0) && (j - 1 >= 0)) {
-        floodFill(i - 1, j - 1)
+        floodFill(i - 1, j - 1,autoOpen)
     }
     if (i - 1 >= 0) {
-        floodFill(i - 1, j)
+        floodFill(i - 1, j,autoOpen)
     }
     if ((i - 1 >= 0) && (j + 1 < mines[i].length)) {
-        floodFill(i - 1, j + 1)
+        floodFill(i - 1, j + 1,autoOpen)
     }
     if (j - 1 >= 0) {
-        floodFill(i, j - 1)
+        floodFill(i, j - 1,autoOpen)
     }
     if (j + 1 < mines[i].length) {
-        floodFill(i, j + 1)
+        floodFill(i, j + 1,autoOpen)
     }
     if ((i + 1 < mines.length) && (j - 1 >= 0)) {
-        floodFill(i + 1, j - 1)
+        floodFill(i + 1, j - 1,autoOpen)
     }
     if ((i + 1 < mines.length)) {
-        floodFill(i + 1, j)
+        floodFill(i + 1, j,autoOpen)
     }
     if ((i + 1 < mines.length) && (j + 1 < mines[i].length)) {
-        floodFill(i + 1, j + 1)
+        floodFill(i + 1, j + 1,autoOpen)
     }
     return
 }
