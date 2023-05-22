@@ -1,9 +1,7 @@
 const board = document.getElementById('board')
 const grid = document.getElementById('grid')
-
-const pauseBtn = document.getElementById('pauseBtn')
-const redoBtn = document.getElementById('redoBtn')
 const minesCountText = document.getElementById('minesCount')
+
 
 const MOUSE_BUTTONS = {
     LEFT: 0,
@@ -18,8 +16,7 @@ const appendSeconds = document.getElementById('seconds')
 const appendMinutes = document.getElementById('minutes')
 const appendHours = document.getElementById('hours')
 
-//disable flaged box 
-document.addEventListener('contextmenu', event => event.preventDefault())
+
 
 let gridWidth = 12
 let gridHeight = 12
@@ -40,7 +37,20 @@ let minutes
 let hours
 
 let interval
+let lastClickedCoordinates = { i: -1, j: -1 }
 
+//sticky navbar
+window.onscroll = function() {
+    var header = document.querySelector('header')
+
+    if (window.pageYOffset > 0) { // If the page is scrolled down
+      header.classList.add('sticky') 
+    } else {
+      header.classList.remove('sticky')
+    }
+}
+//disable flagged box 
+document.addEventListener('contextmenu', event => event.preventDefault())
 
 class Square {
     constructor({ }) {
@@ -50,6 +60,33 @@ class Square {
         this.flagType = undefined
     }
 }
+
+//redo func
+const redo = () => {
+    if (stopped && lastClickedCoordinates.i !== -1 && lastClickedCoordinates.j !== -1) {
+        stopped = false;
+        squares[lastClickedCoordinates.i * gridWidth + lastClickedCoordinates.j].innerHTML = '';
+        mines[lastClickedCoordinates.i][lastClickedCoordinates.j].discovered = false;
+        if (mines[lastClickedCoordinates.i][lastClickedCoordinates.j].adjacentMines > 0) {
+            squares[lastClickedCoordinates.i * gridWidth + lastClickedCoordinates.j].innerText = mines[lastClickedCoordinates.i][lastClickedCoordinates.j].adjacentMines;
+        }
+
+        for (let i = 0; i < gridHeight; i++) {
+            for (let j = 0; j < gridWidth; j++) {
+                const square = squares[i * gridWidth + j];
+                if (!mines[i][j].discovered) {
+                    square.innerHTML = '';
+                    if (mines[i][j].adjacentMines > 0) {
+                        square.innerText = mines[i][j].adjacentMines;
+                    }
+                }
+            }
+        }
+    }
+    startTimer();
+    warningBox.style.display = 'none';
+}
+
 
 const setInitialVariables = () => {
     stopped = false
@@ -87,27 +124,17 @@ const populateGrid = () => {
                 switch (event.button) {
                     case MOUSE_BUTTONS.LEFT:
                         checkMine(i, j)
-                        break;
+                        break
                     case MOUSE_BUTTONS.RIGHT:
                         putFlag(i, j)
                     default:
-                        break;
+                        break
                 }
             })
             squares.push(square)
             grid.appendChild(square)
         }
     }
-}
-
-
-function redo() {
-    if(stopped) {
-        unblow() 
-    }
-}
-function unblow(i,j) {
-    
 }
 
 
@@ -163,42 +190,44 @@ const setAdjancentMines = () => {
 }
 
 const checkMine = (i, j) => {
-    if (stopped) return;
+    if (stopped) return
 
     if (firstClick) {
-        firstClick = false;
-        startTimer();
+        firstClick = false
+        startTimer()
     }
 
-    if (mines[i][j].flagType === FLAG_TYPES.OK) return;
+    if (mines[i][j].flagType === FLAG_TYPES.OK) return
     if (mines[i][j].mine) {
-        blow();
-        stopped = true;
+        lastClickedCoordinates.i = i
+        lastClickedCoordinates.j = j
+        blow()
+        stopped = true
     } else if (mines[i][j].adjancentMines > 0 && mines[i][j].discovered) {
         if (checkAdjacentFlags(i, j)) {
-            autoOpenAdjacentCells(i, j);
+            autoOpenAdjacentCells(i, j)
         }
     } else {
-        floodFill(i, j);
+        floodFill(i, j)
     }
-};
+    checkWin()
+}
 
 const checkAdjacentFlags = (i, j) => {
-    let adjacentFlags = 0;
-
+    let adjacentFlags = 0
     // Kiểm tra các ô xung quanh
     for (let row = i - 1; row <= i + 1; row++) {
         for (let col = j - 1; col <= j + 1; col++) {
             if (row >= 0 && row < gridHeight && col >= 0 && col < gridWidth) {
                 if (mines[row][col].flagType === FLAG_TYPES.OK) {
-                    adjacentFlags++;
+                    adjacentFlags++
                 }
             }
         }
     }
 
-    return adjacentFlags === mines[i][j].adjancentMines;
-};
+    return adjacentFlags === mines[i][j].adjancentMines
+}
 
 const autoOpenAdjacentCells = (i, j) => {
     for (let row = i - 1; row <= i + 1; row++) {
@@ -206,16 +235,16 @@ const autoOpenAdjacentCells = (i, j) => {
             if (row >= 0 && row < gridHeight && col >= 0 && col < gridWidth) {
                 if (!mines[row][col].discovered && mines[row][col].flagType !== FLAG_TYPES.OK) {
                     if (mines[row][col].mine) {
-                        blow();
-                        stopped = true;
+                        blow(row,col)
+                        stopped = true
                     } else {
-                        floodFill(row, col);
+                        floodFill(row, col)
                     }
                 }
             }
         }
     }
-};
+}
 
 const floodFill = (i, j) => {
 
@@ -229,7 +258,6 @@ const floodFill = (i, j) => {
         nMinesDiscovered++
 
         if (nMinesDiscovered === gridWidth * gridHeight - totalMines) {
-            alert("You won!!! Press New Game to play again")
             stopped = true
         }
         if (mines[i][j].adjancentMines != 0) {
@@ -265,37 +293,36 @@ const floodFill = (i, j) => {
     return
 }
 
-const blow = () => {
+const blow = (i,j) => {
     for (let i = 0; i < mines.length; i++) {
         for (let j = 0; j < mines[i].length; j++) {
-            if (mines[i][j].mine) {
+          if (mines[i][j].mine) {
                 const bombImg = document.createElement('img')
                 bombImg.src = './media/bomb.png'
                 squares[i * gridWidth + j].innerHTML = ''
                 squares[i * gridWidth + j].appendChild(bombImg)
-            }
+            }  
         }
     }
-
+    const warningBox = document.getElementById('warningBox');
+    warningBox.style.display = 'block';
 }
 
 const putFlag = (i, j) => {
-
-    if (mines[i][j].discovered || stopped) return;
+    if (mines[i][j].discovered || stopped) return
+    
     if (!mines[i][j].flagType) {
-        
-        flag(i, j);
+        flag(i, j)
     } else if (mines[i][j].flagType === FLAG_TYPES.OK) {
-        
-        doubt(i, j);
+        doubt(i, j)
     } else if (mines[i][j].flagType === FLAG_TYPES.DOUBT) {
         
-        unDoubt(i, j);
+        unDoubt(i, j)
     }
+    checkWin()
 }
 
 function flag(i, j) {
-
     const flagImg = document.createElement('img')
     flagImg.src = './media/flag.png'
     squares[i * gridWidth + j].innerHTML = ''
@@ -304,6 +331,8 @@ function flag(i, j) {
     minesCountText.innerText = `${nMines}/${totalMines}`
     mines[i][j].flagType = FLAG_TYPES.OK
 }
+
+
 function doubt(i, j) {
     const flagDoubtImg = document.createElement('img')
     flagDoubtImg.src = './media/flag_doubt.png'
@@ -380,25 +409,45 @@ const pause = () => {
         grid.style.visibility = 'visible'
     }
 }
-
+const checkWin = () => {
+    let flaggedMines = 0;
+    let openedNumberSquares = 0;
+  
+    for (let i = 0; i < mines.length; i++) {
+      for (let j = 0; j < mines[i].length; j++) {
+        if (mines[i][j].mine && mines[i][j].flagType === FLAG_TYPES.OK) {
+          flaggedMines++;
+        }
+        if (!mines[i][j].mine && mines[i][j].discovered) {
+          openedNumberSquares++;
+        }
+      }
+    }
+  
+    if (flaggedMines === totalMines || openedNumberSquares === gridWidth * gridHeight - totalMines) {
+        const winningBox = document.getElementById('winningBox');
+        winningBox.style.display = 'block';
+    }
+}
+  
 const newGame = () => {
     const level = document.getElementById('level')
     switch (level.value) {
         case 'small':
             gridWidth = 12
             gridHeight = 12
-            break;
+            break
         case 'medium':
             gridWidth = 16
             gridHeight = 16
-            break;
+            break
         case 'large':
             gridWidth = 20
             gridHeight = 20
-            break;
+            break
 
         default:
-            break;
+            break
     }
     startGame()
 }
@@ -409,6 +458,8 @@ const startGame = () => {
     populateGrid()
     setMines()
     setAdjancentMines()
+    warningBox.style.display = 'none'
+    winningBox.style.display = 'none'
 }
 
 startGame()
