@@ -1,5 +1,5 @@
 # Minesweeper
-<h2>Welcome to our project. We are team ... of DSA group. Our members include: </h2>
+<h2>Welcome to our project. We are team from DSA group. Our members include: </h2>
 <h3>
   <li>Hồ Hữu Hiệp ITITIU20202</li>
   <li>Nguyễn Thanh Hiền ITITIU20142</li>
@@ -18,7 +18,7 @@
     <li>Features</li>
     <li>Scope</li>
     <li>Contribution</li>
-    <li>Documentation</li>
+    <li>Reference</li>
  </ol>
 </h3>  
 
@@ -38,7 +38,8 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 <p align="center"><b>Figure: Example</b></p>
 
 <p>The game is ended whenever you find the mines and open all the squares that don't have mine under.</p>
-<p>You had no idea what happened when you opened the square. Maybe the first time you touch the first square, you'll get a mine and lose the game. Isn't it difficult to play? That's why we provide a redo button <img></img> to assist you have a wonderful experience. This button will take you back to the last time you touched the mine, whether it was the first time or whenever you opened the squares, and offer you another chance to find new way to live.</p>
+<p>You had no idea what happened when you opened the square. Maybe the first time you touch the first square, you'll get a mine and lose the game. Isn't it difficult to play? That's why we provide a redo button to assist you have a wonderful experience. This button will take you back to the last time you touched the mine, whether it was the first time or whenever you opened the squares, and offer you another chance to find new way to live.</p>
+<p>This game includes three levels with more squares and mines to create a greater challenge. To get a decent result, you must concentrate on examining them.</p>
 
 <h2><img src='READMEpic/platform.png' alt='platform' width='25px' height='25px'><img> 3. PLATFORM</h2>
 <p>We using 2 platforms to let you play this game by using web browser and AR mode using facebook camera app.</p>
@@ -67,7 +68,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
    <li>Right-click in the square that has flag once again to create the predict flag.</li>
    <li>In the 3x3 area, if the center square contains number and around it has enough flag similar to the number, left-click to open all the squares around automatically.</li>
    <li>You can redo the game many times when you open and receive the mines. Click the redo button to rollback your choices.</li>
-   <li>Click restart button or select different level when you want to create a new game.<li>
+   <li>Click restart button or select different level when you want to create a new game.</li>
 </ul>
 
 <h3>Next, we also guide you how to play this game on AR mode</h3>
@@ -148,7 +149,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 </ul>
 </ol>
 
-<h2>6. SCOPE</h2>
+<h2><img src='READMEpic/goals.png' alt='scope' width='25px' height='25px'></img> 6. SCOPE</h2>
 <h3>In the future, we have some plan for improving the quality of MINESWEEPER. There are about:</h3>
 <p>-Update Leaderboard,score
   -Apply AR in multi-devices 
@@ -164,4 +165,4 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
   <li>Support: Lê Quý Minh Đức, Tạ Vĩ Khang, Lê Hoàng Thái Tuấn</li>
 </h4>
 
-<h2><img src='READMEpic/documents.png' alt='member' width='25px' height='25px'><img> 8. DOCUMENTATION</h2>
+<h2><img src='READMEpic/documents.png' alt='member' width='25px' height='25px'><img> 8. REFERENCES</h2>
