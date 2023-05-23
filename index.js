@@ -75,8 +75,19 @@ const redo = () => {
                     square.innerHTML = '';
                     mines[i][j].discovered = false;
                 }
-                if(mines[i][j].flagType === FLAG_TYPES.OK) flag(i,j)    //trước khi dính bom mà chỗ đó có cờ mà vô tình bom che lấp thì flag lại thui
-                if(mines[i][j].flagType === FLAG_TYPES.DOUBT) doubt(i,j) //tương tự cho doubt
+                if(mines[i][j].flagType === FLAG_TYPES.OK && mines[i][j].mine) {
+                    const flagImg = document.createElement('img')
+                    flagImg.src = './media/flag.png'
+                    squares[i * gridWidth + j].innerHTML = ''
+                    squares[i * gridWidth + j].appendChild(flagImg)
+                }    //trước khi dính bom mà chỗ đó có cờ mà vô tình bom che lấp thì flag lại thui
+                if(mines[i][j].flagType === FLAG_TYPES.DOUBT && mines[i][j].mine) {
+                    const flagDoubtImg = document.createElement('img')
+                    flagDoubtImg.src = './media/flag_doubt.png'
+                    squares[i * gridWidth + j].innerHTML = ''
+                    squares[i * gridWidth + j].appendChild(flagDoubtImg)
+                    
+                 } //tương tự cho doubt
             }
         }
     }
