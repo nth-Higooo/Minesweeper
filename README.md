@@ -148,11 +148,10 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 
 <h2>6. SCOPE</h2>
 <h3>In the future, we have some plan for improving the quality of MINESWEEPER. There are about:</h3>
-<p>-
--
--
--
--
+<p>-Update Leaderboard,score
+  -Apply AR in multi-devices 
+  -Create tasks
+  -Optimize the speed of rendering process
 </p>
 
 <h2><img src='READMEpic/teamwork.png' alt='member' width='25px' height='25px'><img> 7. CONTRIBUTION</h2>
