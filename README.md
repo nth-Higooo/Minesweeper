@@ -47,7 +47,11 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 
 <p align="center"><b>Figure: Web browser platform</b></p>
 <h3>To use AR mode, using scanner to scan this picture below (we also add AR mode directly to the web browser).</h3>
-<a href='https://www.youtube.com/watch?v=xvFZjo5PgG0'>Click here to scan!</a>
+<h4>QR scan to use on Facebook</h4>
+<p align="center"><img src="media/qrcode_face.png" alt="QRFB"></p>
+<h4>QR scan to use on Instagram</h4>
+<p align="center"><img src="media/qrcode_insta.png" alt="QRI"></p>
+
 <h3>Platfrom of AR mode</h3>
 <p align="center"><img align="center" src="READMEpic/AR.jpg" alt="AR"></p>
 <p align="center"><b>Figure: AR platform</b></p>
