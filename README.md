@@ -67,9 +67,11 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
    <li>Right-click in the square that has flag once again to create the predict flag.</li>
    <li>In the 3x3 area, if the center square contains number and around it has enough flag similar to the number, left-click to open all the squares around automatically.</li>
    <li>You can redo the game many times when you open and receive the mines. Click the redo button to rollback your choices.</li>
-   <li>Click restart button or select different level when you want to create a new game. <li>
+   <li>Click restart button or select different level when you want to create a new game.<li>
 </ul>
+
 <h3>Next, we also guide you how to play this game on AR mode</h3>
+
 <ul>
    <li>Note: AR mode only can use on mobile phone or tablet.</li>
    <li>Find the good place for playing if you don't want to stand and play.</li>
