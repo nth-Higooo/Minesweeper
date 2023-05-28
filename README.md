@@ -149,8 +149,18 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 </ul>
 </ol>
 
+<h2><img src='algorithm.png' alt='algo' width='25px' height='25px'></img>6. ALGORITHMS</h2>
+<ol>
+  <li>Recursive algorithm for discovering adjacent squares when a square with no adjacent mines is clicked: This algorithm recursively explores adjacent squares to reveal all empty squares in a connected area. It continues to reveal adjacent squares until it reaches squares with adjacent mines.</li>
+  <li>Randomized algorithm for placing mines on the game grid: This algorithm randomly selects squares on the grid and places mines in those positions. The randomness ensures that the mines are distributed randomly across the grid.</li>
+  <li>Algorithm for calculating the number of adjacent mines for each non-mine square on the grid: This algorithm iterates over each non-mine square on the grid and counts the number of adjacent squares that contain mines. The count is then stored as the number displayed on the square.<li>
+  <li>Algorithm for placing and removing flags on squares: This algorithm allows the player to place or remove flags on squares. It handles the logic for adding a flag to a square when the player right-clicks on it, and removing the flag when the player right-clicks again.</li>
+  <li>Algorithm for revealing all mines on the grid when a mine is clicked: This algorithm is triggered when a mine square is clicked. It reveals all mines on the grid, ending the game and showing the player which squares contained mines.</li>
+  <li>Algorithm for automatically opening adjacent squares when a square with the correct number of adjacent flags is clicked: This algorithm is triggered when a numbered square is clicked. It checks if the number on the square matches the number of adjacent flags. If it does, it automatically opens all the adjacent squares that are not flagged.</li>
+  <li>Algorithm for tracking the elapsed time using a timer: This algorithm uses a timer to keep track of the elapsed time since the start of the game. It updates and displays the time on the user interface at regular intervals.</li>
+</ol>
 
-<h2><img src='READMEpic/teamwork.png' alt='member' width='25px' height='25px'><img> 6. CONTRIBUTION</h2>
+<h2><img src='READMEpic/teamwork.png' alt='member' width='25px' height='25px'></img> 7. CONTRIBUTION</h2>
 
 <h4>
   <li>AR building: Hồ Hữu Hiệp</li>
@@ -158,6 +168,6 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
   <li>Support: Lê Quý Minh Đức, Tạ Vĩ Khang, Lê Hoàng Thái Tuấn</li>
 </h4>
 
-<h2><img src='READMEpic/documents.png' alt='member' width='25px' height='25px'><img> 7. REFERENCES</h2>
+<h2><img src='READMEpic/documents.png' alt='member' width='25px' height='25px'><img> 8. REFERENCES</h2>
 <h3>https://sparkar.facebook.com/ar-studio/learn/docs/ar-library</h3>
 <h3>https://www.youtube.com/watch?v=6zMiZ42nBcA</h3>
