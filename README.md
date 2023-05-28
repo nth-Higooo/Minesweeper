@@ -1,4 +1,4 @@
-# Minesweeper
+# Minesweeper Report
 <h2>Welcome to our project. We are team from DSA group. Our members include: </h2>
 <h3>
   <li>Hồ Hữu Hiệp ITITIU20202</li>
@@ -7,7 +7,7 @@
   <li>Tạ Vĩ Khang ITITIU20226</li>
   <li>Lê Hoàng Thái Tuấn ITITIU20340</li>
 </h3>
-<h3>This README contains all about the creating of MINESWEEPER game by using HTML,CSS and JS. Also,we have applied the Augmented Reality (AR) technology to play game to give you have a new experience </h3>
+<h3>This report contains all about the creating of MINESWEEPER game by using HTML,CSS and JS. Also,we have applied the Augmented Reality (AR) technology to play game to give you have a new experience </h3>
 <h2>Here is the table of contents:</h2>
 <h3>
  <ol>
@@ -15,7 +15,8 @@
     <li>Gameplay</li>
     <li>Platform</li>
     <li>Tutorial</li>
-    <li>Features</li>
+   <li>Features</li>
+   <li>Algorithm</li>
     <li>Contribution</li>
     <li>Reference</li>
  </ol>
