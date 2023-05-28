@@ -149,7 +149,7 @@ With its nostalgic charm and captivating gameplay, MINESWEEPER is the ultimate t
 </ul>
 </ol>
 
-<h2><img src='algorithm.png' alt='algo' width='25px' height='25px'></img>6. ALGORITHMS</h2>
+<h2><img src='READMEpic/algorithm.png' alt='algo' width='25px' height='25px'></img>6. ALGORITHMS</h2>
 <ol>
   <li>Recursive algorithm for discovering adjacent squares when a square with no adjacent mines is clicked: This algorithm recursively explores adjacent squares to reveal all empty squares in a connected area. It continues to reveal adjacent squares until it reaches squares with adjacent mines.</li>
   <li>Randomized algorithm for placing mines on the game grid: This algorithm randomly selects squares on the grid and places mines in those positions. The randomness ensures that the mines are distributed randomly across the grid.</li>
