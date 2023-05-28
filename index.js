@@ -3,6 +3,7 @@ const grid = document.getElementById('grid')
 const minesCountText = document.getElementById('minesCount')
 
 
+
 const MOUSE_BUTTONS = {
     LEFT: 0,
     RIGHT: 2
@@ -469,5 +470,7 @@ hamburger.onclick = function () {
     navBar = document.getElementById('nav-bar')
     navBar.classList.toggle('active')
 }
+
+
 
 

@@ -116,6 +116,7 @@ header {
     border-radius: 5px;
     color: rgb(69, 7, 40);
     padding: 10px;
+    margin:10px;
 }
 
 .home {
@@ -259,6 +260,7 @@ button:hover {
 
 /*______________ Rule ______________ */
 .rule {
+    align-items: center;
     background: rgba(0, 0, 0, 0.625);
     border-radius: 30px;
     margin-bottom: 100px;
@@ -277,7 +279,7 @@ button:hover {
 .items {
     align-items: center;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, auto) );
+    grid-template-columns: repeat(auto-fit, minmax(400px, auto) );
 }
 .boxes {
     align-items: center;
@@ -287,7 +289,7 @@ button:hover {
 }
 .box-img img {
     max-width: 100%;
-    width: 60px;
+    width: 100px;
     height: auto;
     margin-bottom: 20px;
 }
@@ -301,7 +303,7 @@ button:hover {
     color: azure;
    line-height: 20px;
    font-size: 15px;
-   font-weight: 200;
+   font-weight: 50;
 }
 /*______________ Contact______________ */
 .Contact {
@@ -384,20 +386,22 @@ button:hover {
     animation: animateWave 3s linear infinite;
 }
 form input {
-    width: 300px;
+    width: 250px;
     height: 30px;
     border-radius: 10px;
     text-align: center;
-    margin: 20px;
+    margin: 10px 0px;
 }
 .Contact button {
+    display: block;
     height: 30px;
     font-weight: 800;
     cursor: pointer;
     background: #fff;
-    border-radius: 5px;
+    border-radius: 10px;
     color: rgb(69, 7, 40);
     width: 100px;
+    margin: 0 auto;
 }
 .Contact button:hover {
     color: azure;
@@ -405,7 +409,6 @@ form input {
     z-index: 0;
     transition: 0.5s;
 }
-
 
 /*______________ AR______________ */
 .AR {
@@ -479,7 +482,6 @@ form input {
         background: azure;
         margin: 6px 0;
     }
-
     .nav-bar {
         height: 0;
         position: absolute;
@@ -513,4 +515,5 @@ form input {
         padding: 20px 20px;
         margin-bottom: 20px;
     }
+
 }
